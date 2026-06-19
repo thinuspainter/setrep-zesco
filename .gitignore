@@ -1,0 +1,29 @@
+# SETREP — keep production settlement config OUT of the repo.
+# Only the password-encrypted explorer should ever be committed.
+
+# Encrypted explorer is the ONLY allowed deliverable (force-tracked below)
+# Plaintext / sensitive outputs — never commit:
+SETREP_dependency_explorer.html
+SETREP_dependency_lineage.xlsx
+SETREP_dependency_report.docx
+setrep_config.db
+*.db
+
+# Raw Oracle exports / dumps
+*.sql
+*.pde
+*.dmp
+*.csv
+
+# Intermediate build artifacts
+bundle.json
+graph.json
+*.log
+
+# Local / editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Explicitly allow the encrypted file even if a rule above would catch it
+!SETREP_dependency_explorer_LOCKED.html
